@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
+import { Item } from "./Statistics.styled";
 
-export const StatisticsItem = ({ label, percentage }) => {
-  return  <li className="item"  >
+
+export const StatisticsItem = ({ label, percentage, color }) => {
+  return  <Item style={{background: color}} >
       <span className="label">{label}</span>
       <span className="percentage">{percentage}%</span>
-       </li>
+       </Item>
 }
 
 StatisticsItem.propTypes ={

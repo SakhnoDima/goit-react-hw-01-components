@@ -1,33 +1,32 @@
 import PropTypes from 'prop-types';
+import { ProfileBox, UserAvatar, UserName, UserTag, UserLocation, Stats, ListItem, Label, Quantity } from "./Profile.styled";
 
 export const Profile = ({avatar, username, tag, location,stats}) =>{
-return <div className="profile">
+return <ProfileBox className="profile">
   <div className="description">
-    <img
+    <UserAvatar
       src={avatar}
       alt="User avatar"
-      className="avatar"
     />
-    <p className="name">{username}</p>
-    <p className="tag">@{tag}</p>
-    <p className="location">{location}</p>
+    <UserName>{username}</UserName>
+    <UserTag>@{tag}</UserTag>
+    <UserLocation>{location}</UserLocation>
   </div>
-
-  <ul className="stats" style={{ display: 'flex', listStyle: 'none'}}>
-    <li>
-      <span className="label">Followers</span> <br />
-      <span className="quantity"> {stats.followers}</span>
-    </li>
-    <li>
-      <span className="label">Views</span> <br />
-      <span className="quantity"> {stats.views}</span>
-    </li>
-    <li>
-      <span className="label">Likes</span> <br />
-      <span className="quantity"> {stats.likes}</span>
-    </li>
-  </ul>
-</div>
+  <Stats>
+    <ListItem>
+      <Label>Followers</Label> <br />
+      <Quantity> {stats.followers}</Quantity>
+    </ListItem>
+    <ListItem>
+      <Label>Views</Label> <br />
+      <Quantity> {stats.views}</Quantity>
+    </ListItem>
+    <ListItem>
+      <Label>Likes</Label> <br />
+      <Quantity> {stats.likes}</Quantity>
+    </ListItem>
+  </Stats>
+</ProfileBox>
 }
 
 Profile.propTypes = {
