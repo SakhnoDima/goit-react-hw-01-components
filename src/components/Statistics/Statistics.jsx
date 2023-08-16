@@ -7,11 +7,12 @@ return  <section className="statistics">
  {title && <h2 className="title">{title}</h2>}
   <ul className="stat-list">
     {items.map(item =>(
-         <li className="item"  key={item.id}>
+        
             <StatisticsItem 
+            key={item.id}
             label={item.label} 
             percentage ={item.percentage}/>
-    </li>
+   
     ))}
   </ul>
 </section> 

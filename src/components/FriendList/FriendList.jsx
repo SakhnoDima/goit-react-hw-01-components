@@ -5,12 +5,13 @@ import PropTypes from 'prop-types';
 export const FriendList = ({ items = [] }) => {
 return <ul className="friend-list">
  {items.map((item => (
-    <li className="item" key={item.id}>
+    
     <StatisticsItem
+    key={item.id}
     isOnline={item.isOnline}
     name={item.name}
     avatar={item.avatar}/>
-     </li>
+     
  )))}
 </ul>
 }
