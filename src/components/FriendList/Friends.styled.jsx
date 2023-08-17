@@ -8,11 +8,10 @@ width: 250px;
 gap: 7px;
 `
 export const Card = styled.li`
-background-color: lightgray;
-box-shadow: 0px 1px 6px 4px grey;
+background-color: ${props => props.theme.colors.primary};
+box-shadow: ${props => props.theme.shadow.primary};
 display: flex;
 align-items: center;
-// justify-content: space-around;
 padding: 5px;
 gap: 5px;
 &:hover {

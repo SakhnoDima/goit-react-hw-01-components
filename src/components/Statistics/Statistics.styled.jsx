@@ -4,7 +4,7 @@ export const StatisticsSection = styled.div`
 margin: 0 auto;
 max-width: 330px;
 padding: 30px;
-background-color: lightgrey;
+background-color: ${props => props.theme.colors.primary};
 `
 export const Title = styled.h2`
 padding: 20px 10px;

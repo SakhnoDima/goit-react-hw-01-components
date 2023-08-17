@@ -1,3 +1,5 @@
+import { ThemeProvider } from '@emotion/react'
+
 import { Profile } from "./Profile/Profile";
 import { Statistics } from "./Statistics/Statistics"
 import { FriendList } from "./FriendList/FriendList";
@@ -8,9 +10,18 @@ import  items  from "./Statistics/data 2.json";
 import  friends  from "./FriendList/friends.json";
 import  transaction from "./TransactionHistory/transactions.json";
 
+const theme = {
+  colors: {
+    primary: 'lightgray'
+  },
+  shadow: { 
+  primary: '0px 1px 6px 4px grey'
+  }
+}
+
 export const App = () => {
   return (
-    <>
+    <ThemeProvider theme={theme}>
      <Profile 
     username={user.username}
     tag={user.tag}
@@ -23,6 +34,6 @@ export const App = () => {
     <FriendList items={friends}/>
     <br/>
     <TransactionHistory items={transaction} />
-    </>
+    </ThemeProvider>
   );
 };

@@ -5,7 +5,7 @@ export const ProfileBox = styled.div`
  margin: 0 auto;
  padding-top: 8px;
  border-radius: 10px;
- box-shadow:  0px 1px 6px 4px grey;
+ box-shadow:  ${props => props.theme.shadow.primary};
  &:hover {
     box-shadow:  0px 1px 6px 4px black;
  }
