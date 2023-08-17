@@ -6,6 +6,9 @@ export const ProfileBox = styled.div`
  padding-top: 8px;
  border-radius: 10px;
  box-shadow:  0px 1px 6px 4px grey;
+ &:hover {
+    box-shadow:  0px 1px 6px 4px black;
+ }
 `
 export const UserAvatar = styled.img`
 border-radius: 50%;

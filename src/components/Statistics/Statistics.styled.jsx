@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 export const StatisticsSection = styled.div`
-margin: 0 auto 20px;
+margin: 0 auto;
 max-width: 330px;
 padding: 30px;
 background-color: lightgrey;

@@ -1,9 +1,11 @@
-import { StatisticsItem } from "./FriendsItem";
 import PropTypes from 'prop-types';
+
+import { StatisticsItem } from "./FriendsItem";
+import { FriendItems } from "./Friends.styled";
 
 
 export const FriendList = ({ items = [] }) => {
-return <ul className="friend-list">
+return <FriendItems>
  {items.map((item => (
     
     <StatisticsItem
@@ -13,7 +15,7 @@ return <ul className="friend-list">
     avatar={item.avatar}/>
      
  )))}
-</ul>
+</FriendItems>
 }
 
 FriendList.propTypes ={

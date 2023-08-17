@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
+import { Card, Status, Avatar, Name } from "./Friends.styled";
 
 export const StatisticsItem = ({ avatar, name, isOnline }) => {
-    return <li className="item" >
-    <span className="status">{isOnline}</span>
-    <img className="avatar" src={avatar} alt="User avatar" width="48" />
-    <p className="name">{name}</p>
-    </li>
+    return <Card>
+    <Status style={{background: `${isOnline?"green":"red"}`}}>{isOnline}</Status>
+    <Avatar src={avatar} alt="User avatar" width="48" />
+    <Name>{name}</Name>
+    </Card>
   }
 
 StatisticsItem.propTypes={

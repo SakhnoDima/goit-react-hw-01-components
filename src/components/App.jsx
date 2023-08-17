@@ -24,6 +24,5 @@ export const App = () => {
     <br/>
     <TransactionHistory items={transaction} />
     </>
-
   );
 };
