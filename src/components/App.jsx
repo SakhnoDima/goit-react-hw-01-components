@@ -1,39 +1,40 @@
-import { ThemeProvider } from '@emotion/react'
+import { ThemeProvider } from '@emotion/react';
 
-import { Profile } from "./Profile/Profile";
-import { Statistics } from "./Statistics/Statistics"
-import { FriendList } from "./FriendList/FriendList";
-import { TransactionHistory } from "./TransactionHistory/TransactionHistory";
+import { Profile } from './Profile/Profile';
+import { Statistics } from './Statistics/Statistics';
+import { FriendList } from './FriendList/FriendList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
-import  user  from "./Profile/user.json";
-import  items  from "./Statistics/data 2.json";
-import  friends  from "./FriendList/friends.json";
-import  transaction from "./TransactionHistory/transactions.json";
+import user from './Profile/user.json';
+import items from './Statistics/data 2.json';
+import friends from './FriendList/friends.json';
+import transaction from './TransactionHistory/transactions.json';
 
 const theme = {
   colors: {
-    primary: 'lightgray'
+    primary: 'lightgray',
   },
-  shadow: { 
-  primary: '0px 1px 6px 4px grey'
-  }
-}
+  shadow: {
+    primary: '0px 1px 6px 4px grey',
+  },
+};
 
 export const App = () => {
   return (
     <ThemeProvider theme={theme}>
-     <Profile 
-    username={user.username}
-    tag={user.tag}
-    location={user.location}
-    avatar={user.avatar}
-    stats={user.stats} />
-     <br/>
-    <Statistics title={'Upload stats'} items={items} />
-    <br/>
-    <FriendList items={friends}/>
-    <br/>
-    <TransactionHistory items={transaction} />
+      <Profile
+        username={user.username}
+        tag={user.tag}
+        location={user.location}
+        avatar={user.avatar}
+        stats={user.stats}
+      />
+      <br />
+      <Statistics title={'Upload stats'} items={items} />
+      <br />
+      <FriendList items={friends} />
+      <br />
+      <TransactionHistory items={transaction} />
     </ThemeProvider>
   );
 };
