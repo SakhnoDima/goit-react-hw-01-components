@@ -1,4 +1,4 @@
-import { PropTypes, bool } from "prop-types";
+import { PropTypes} from "prop-types";
 
 import { TransactionItem } from "./TransactionHistoryItem";
 import { Table, TableHead, TableHeadItem } from "./Transaction.styled";
