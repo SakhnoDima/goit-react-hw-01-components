@@ -21,6 +21,5 @@ return <FriendItems>
 FriendList.propTypes ={
     item : PropTypes.arrayOf(PropTypes.shape({
       id : PropTypes.number.isRequired,
-    }).isRequired)
-   
+    }).isRequired)  
 }
