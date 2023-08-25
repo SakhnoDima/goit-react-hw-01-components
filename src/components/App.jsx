@@ -1,4 +1,6 @@
 import { ThemeProvider } from '@emotion/react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 import { Profile } from './Profile/Profile';
 import { Statistics } from './Statistics/Statistics';
@@ -11,6 +13,7 @@ import friends from './FriendList/friends.json';
 import transaction from './TransactionHistory/transactions.json';
 import { Counter } from './Counter/Counter.jsx';
 import { Toggle } from './Counter/Show-Hide';
+import Hook from 'tab/Hook';
 
 const theme = {
   colors: {
@@ -24,22 +27,33 @@ const theme = {
 export const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Toggle>
-        <Counter initialValue={10} step={5} />
-        <Profile
-          username={user.username}
-          tag={user.tag}
-          location={user.location}
-          avatar={user.avatar}
-          stats={user.stats}
-        />
-        <br />
-        <Statistics title={'Upload stats'} items={items} />
-        <br />
-        <FriendList items={friends} />
-        <br />
-        <TransactionHistory items={transaction} />
-      </Toggle>
+      <Tabs>
+        <TabList>
+          <Tab>Hook</Tab>
+          <Tab>DZ</Tab>
+        </TabList>
+        <TabPanel>
+          <Hook />
+        </TabPanel>
+        <TabPanel>
+          <Toggle>
+            <Counter initialValue={10} step={5} />
+            <Profile
+              username={user.username}
+              tag={user.tag}
+              location={user.location}
+              avatar={user.avatar}
+              stats={user.stats}
+            />
+            <br />
+            <Statistics title={'Upload stats'} items={items} />
+            <br />
+            <FriendList items={friends} />
+            <br />
+            <TransactionHistory items={transaction} />
+          </Toggle>
+        </TabPanel>
+      </Tabs>
     </ThemeProvider>
   );
 };
