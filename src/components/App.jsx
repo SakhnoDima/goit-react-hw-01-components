@@ -14,6 +14,8 @@ import transaction from './TransactionHistory/transactions.json';
 import { Counter } from './Counter/Counter.jsx';
 import { Toggle } from './Counter/Show-Hide';
 import Hook from 'tab/Hook';
+import Clock from 'tab/Clock';
+import AppContext from 'tab/AppContext';
 
 const theme = {
   colors: {
@@ -29,11 +31,20 @@ export const App = () => {
     <ThemeProvider theme={theme}>
       <Tabs>
         <TabList>
+          <Tab>Context</Tab>
           <Tab>Hook</Tab>
+          <Tab>Clock</Tab>
           <Tab>DZ</Tab>
         </TabList>
+
+        <TabPanel>
+          <AppContext />
+        </TabPanel>
         <TabPanel>
           <Hook />
+        </TabPanel>
+        <TabPanel>
+          <Clock />
         </TabPanel>
         <TabPanel>
           <Toggle>
