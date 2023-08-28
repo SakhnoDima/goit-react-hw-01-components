@@ -10,9 +10,9 @@ const countReducer = (state, action) => {
       throw new Error(`Unsupportetd action type ${action.type}`);
   }
 };
-function init(initState) {
+const init = initState => {
   return { ...initState, count: initState.count + 100 };
-}
+};
 
 export const CounterReduce = () => {
   const [state, dispatch] = useReducer(
@@ -24,7 +24,7 @@ export const CounterReduce = () => {
   );
 
   return (
-    <>
+    <div style={{ display: 'flex', gap: 5 }}>
       <button
         type="button"
         onClick={() => dispatch({ type: 'increment', payload: 1 })}
@@ -38,6 +38,6 @@ export const CounterReduce = () => {
       >
         Decrement
       </button>
-    </>
+    </div>
   );
 };
