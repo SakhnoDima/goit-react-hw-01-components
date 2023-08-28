@@ -16,6 +16,7 @@ import { Toggle } from './Counter/Show-Hide';
 import Hook from 'tab/Hook';
 import Clock from 'tab/Clock';
 import AppContext from 'tab/AppContext';
+import { CounterReduce } from 'tab/UseReducer';
 
 const theme = {
   colors: {
@@ -31,12 +32,16 @@ export const App = () => {
     <ThemeProvider theme={theme}>
       <Tabs>
         <TabList>
+          <Tab>useReducer</Tab>
           <Tab>Context</Tab>
           <Tab>Hook</Tab>
           <Tab>Clock</Tab>
           <Tab>DZ</Tab>
         </TabList>
 
+        <TabPanel>
+          <CounterReduce />
+        </TabPanel>
         <TabPanel>
           <AppContext />
         </TabPanel>
